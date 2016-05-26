@@ -33,8 +33,8 @@ node_modules
 .node_repl_history
 
 # Webpack
-dist/
-build/
+public/
+public_dist/
 
 # Typescript
 tsdist/
