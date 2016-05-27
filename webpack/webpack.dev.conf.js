@@ -36,16 +36,18 @@ var config = {
          },
          {
            test: /\.(tsx|ts)?$/,
-           loader: 'ts-loader'
+           loader: 'ts-loader',
+           exclude: path.join(__dirname, '..', '/app'),
+           include: path.join(__dirname, '..', '/client'),
          },
-        //  {
-        //    test: /\.css$/,
-        //    loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer?{browsers:["last 2 version", "> 1%"]}')
-        //  },
-        //  {
-        //    test: /\.scss$/,
-        //    loader: 'style-loader!css-loader!autoprefixer?{browsers:["last 2 version", "> 1%"]}!sass'
-        //  },
+         {
+           test: /\.css$/,
+           loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer?{browsers:["last 2 version", "> 1%"]}')
+         },
+         {
+           test: /\.scss$/,
+           loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer?{browsers:["last 2 version", "> 1%"]}!sass')
+         },
          {
            test: /\.(jpe?g|png|gif)$/i,
            loader: 'url?limit=10000!img?progressive=true'

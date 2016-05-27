@@ -1,4 +1,4 @@
-require('!style!css!./index.css');
+require('./index.scss');
 
 interface Window {
   __DESCRIPTION__: string
