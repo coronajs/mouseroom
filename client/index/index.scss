@@ -1,3 +1,9 @@
 body {
-  background: lightblue;
+  background: #fff;
+  overflow: hidden;
+}
+html, body, #main,
+#MouseZoom {
+  height: 100%;
+  width: 100%;
 }

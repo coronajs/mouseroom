@@ -1,0 +1,12 @@
+{
+  "name": "mouseroom",
+  "globalDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts",
+    "socket.io": "github:DefinitelyTyped/DefinitelyTyped/socket.io/socket.io.d.ts",
+    "socket.io-client": "github:DefinitelyTyped/DefinitelyTyped/socket.io-client/socket.io-client.d.ts",
+    "express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts",
+    "express-serve-static-core": "github:DefinitelyTyped/DefinitelyTyped/express-serve-static-core/express-serve-static-core.d.ts",
+    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts",
+    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts"
+  }
+}
