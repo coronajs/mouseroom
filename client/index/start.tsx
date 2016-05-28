@@ -11,13 +11,14 @@ window.onload = function(){
       mouses.on('update', (keypath, value) => {
         console.log(keypath, value);
       });
-    });
-
-    window.addEventListener('mousemove', (ev) => {
-      controller.update(ev.clientX, ev.clientY);
     })
-  })
 
+    // window.addEventListener('mousemove', (ev) => {
+    //   console.log(ev);
+    //   controller.update(ev.clientX, ev.clientY);
+    // });
+  })
+  window.client = client;
 }
 import * as React from "react";
 import * as ReactDOM from "react-dom";

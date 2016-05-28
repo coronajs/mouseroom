@@ -5,15 +5,19 @@ var mouses = mouseRepo.toModel();
 export class MouseController extends Controller {
     private mouse: Mouse;
     private mouses: any;
-    
-    init(params) {
-        this.sync({
-            include: ['mouse']
-        })
-        return mouseRepo.create(params).then((mouse) => {
+
+    init(params, done) {
+        // this.sync({
+        //     include: ['mouse']
+        // })
+        this.expose('update');
+        return mouseRepo.create({x: 0, y: 0}).then((mouse) => {
             this.mouse = mouse;
             this.mouses = mouses;
-        });
+            done();
+        }).catch((e) => {
+            console.log(e);
+        }).timeout(1000);
     }
 
     update(x, y) {
@@ -23,6 +27,7 @@ export class MouseController extends Controller {
 
     onexit() {
         mouseRepo.remove(this.mouse.id);
+        mouses.remove(this.mouse);
         this.mouse.dispose();
         this.mouse = null;
     }
