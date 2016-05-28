@@ -8,8 +8,8 @@ import {Client} from 'corona-client'
 window.onload = function(){
   var client = new Client('ws://localhost:8080/', function(controller){
     controller.getModel('mouses').then((mouses) => {
-      mouses.on('update', (keypath, value) => {
-        console.log(keypath, value);
+      mouses.on('*.change', (index, key, value) => {
+        console.log(index, key, value)
       });
     })
 

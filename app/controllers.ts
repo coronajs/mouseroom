@@ -14,6 +14,7 @@ export class MouseController extends Controller {
         return mouseRepo.create({x: 0, y: 0}).then((mouse) => {
             this.mouse = mouse;
             this.mouses = mouses;
+            this.mouses.add(mouse);
             done();
         }).catch((e) => {
             console.log(e);
@@ -30,5 +31,6 @@ export class MouseController extends Controller {
         mouses.remove(this.mouse);
         this.mouse.dispose();
         this.mouse = null;
+        this.mouses = null;
     }
 }
