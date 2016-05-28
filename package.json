@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "corona": "0.0.1",
+    "corona-client": "0.0.1",
     "express": "^4.13.4",
     "jquery": "^2.2.4",
     "react": "^15.1.0",
