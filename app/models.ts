@@ -1,13 +1,16 @@
 import {Model, Repository} from 'corona'
-export interface Point {
-    x:number;
-    y:number;
+export interface IMouse {
+    position: {
+        x: number,
+        y: number
+    },
+    color: string,
 }
 
-export class Mouse extends Model<Point>{
-    
+export class Mouse extends Model<IMouse>{
+
 }
 
-export class MouseRepository extends Repository<Point, Mouse>{
-    
+export class MouseRepository extends Repository<IMouse, Mouse>{
+
 }

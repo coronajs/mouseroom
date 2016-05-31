@@ -11,7 +11,10 @@ export class MouseController extends Controller {
         //     include: ['mouse']
         // })
         this.expose('update');
-        return mouseRepo.create({x: 0, y: 0}).then((mouse) => {
+        return mouseRepo.create({
+            position: { x: 0, y: 0},
+            color: `rgb(${parseInt((Math.random() * 255).toString())},${parseInt((Math.random() * 255).toString())},${parseInt((Math.random() * 255).toString())})`
+        }).then((mouse) => {
             this.mouse = mouse;
             this.mouses = mouses;
             this.mouses.add(mouse);
@@ -22,8 +25,8 @@ export class MouseController extends Controller {
     }
 
     update(x, y) {
-        this.mouse.set('x', x)
-        this.mouse.set('y', y);
+        this.mouse.set('position.x', x)
+        this.mouse.set('position.y', y);
     }
 
     onexit() {
